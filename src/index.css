@@ -8,6 +8,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
   background-color: #282c34;
   color: white;
+  text-align: center;
 }
 
 code {
@@ -15,4 +16,13 @@ code {
     monospace;
 }
 
-.w3-animate-fading{animation:fading 10s infinite}@keyframes fading{0%{opacity:0}50%{opacity:1}100%{opacity:0}}
+.w3-animate-fading {
+  animation:fading 10s infinite
+}
+
+@keyframes fading {
+  0%{opacity:0}
+  15%{opacity:1}
+  95%{opacity:1}
+  100%{opacity:0}
+}
