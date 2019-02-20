@@ -17,7 +17,7 @@ code {
 }
 
 .w3-animate-fading{
-  animation:fading 10s 1
+  animation:fading 3s infinite
   
 }
 

@@ -21,7 +21,7 @@ function ImageCarousel(props) {
 
 function RenderImage(props){
   return (
-    <img src={props.nextImage} alt="current slide in gallery" />
+    <img src={props.nextImage} className="w3-animate-fading" alt="current slide in gallery" />
   );
 }
 
@@ -31,9 +31,9 @@ class Hello extends React.Component {
     this.state = {
       gallery: [galaxybun, galaxybun2],
       imageIndex: 0,
-      timer: 0,
+      time: 0,
       };
-    this.nextImage = this.nextImage.bind(this);
+    //this.nextImage = this.nextImage.bind(this);
   }
   
    nextImage() {
@@ -44,18 +44,15 @@ class Hello extends React.Component {
     this.setState({
       gallery: this.state.gallery,
       imageIndex: current,
-      timer: this.state.timer,
+      time: this.state.time,
     });
     //return <img src={this.state.gallery[this.state.imageIndex]} alt="current slide in gallery" onAnimationEnd={()=> return ({this.nextImage()});}/>
     //this.forceUpdate();
   }
   
   timer(){
-    let nextSecond = this.state.timer + 1;
     this.setState({
-      gallery: this.state.gallery,
-      imageIndex: this.state.imageIndex,
-      timer: nextSecond,
+      time: this.state.time + 1,
     });
   }
   
@@ -70,13 +67,14 @@ class Hello extends React.Component {
   
   render() {
     return (     
-      <div className="App">
-      <h1> Hello, and welcome to Elle's art page! </h1>
-      <div>Bunny Image: {this.state.imageIndex + 1}</div>
-      <div>Seconds elapsed: {this.state.timer}</div>
-      //  {this.nextImage()}
-      <RenderImage nextImage={this.state.gallery[this.state.imageIndex]} />
+
+      <div>
+        <h1> Hello, and welcome to Elle's art page! </h1>
+        <p>Bunny Image: {this.state.imageIndex + 1}</p>
+        <p>Seconds elapsed: {this.state.time}</p>
+        <RenderImage nextImage={this.state.gallery[this.state.imageIndex]} />
       </div>
+      
     );
   }
 }
