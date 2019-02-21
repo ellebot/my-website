@@ -27,3 +27,14 @@ code {
   95%{opacity:1}
   100%{opacity:0}
 }
+
+.currentImage{
+  position:absolute;
+  top:0px;
+  left:0px;
+  
+}
+
+.relative{
+  position: relative;
+}
