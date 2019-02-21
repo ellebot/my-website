@@ -5,19 +5,6 @@ import * as serviceWorker from './serviceWorker';
 import galaxybun from './auto_galaxybun_small.jpg';
 import galaxybun2 from './galaxybun1_small.jpg';
 import { CSSTransition } from 'react-transition-group';
-/*
-function ImageCarousel(props) {
-  return (
-    <div>
-      <CSSTransitionGroup
-        transitionName="carousel"
-        transitionEnterTimeout={300}
-        transitionLeaveTimeout={300}>
-        <img src={props.imageSrc} key={props.imageSrc} />
-      </CSSTransitionGroup>
-    </div>
-  );
-}*/
 
 const duration = 1000;
 const imageInterval = 5000;
@@ -33,38 +20,6 @@ const transitionStyles = {
   exiting: { opacity: 1 },
   exited:  { opacity: 0 }, 
 };
-
-
-function RenderImage(props){
-  return (
-    <CSSTransition 
-      appear
-      in = { props.state.show } 
-      timeout = { duration }
-      unmountOnExit
-      onExited={()=> {
-        props.this.setState({
-          showNext: true,
-        });
-      }}
-    >
-      {(state) => (
-        <div style={{
-         ...defaultStyle,
-         //...transitionStyles[state]
-        }}>
-          <img src={props.state.gallery[props.state.currentIndex]} alt="current slide in gallery" />
-          <CSSTransition
-            in = { props.state.showNext }
-            timeout={ duration }
-          >
-            <img src={props.state.gallery[props.state.nextIndex]} alt="current slide in gallery" />
-          </ CSSTransition>
-        </div> 
-      )}
-    </CSSTransition>
-  );
-}
 
 class Hello extends React.Component {
   constructor(props) {
